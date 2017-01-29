@@ -300,6 +300,7 @@ func main() {
 		},
 	}
 	app.Action = func(c *cli.Context) error {
+
 		var err error
 
 		if c.Bool("verbose") {
