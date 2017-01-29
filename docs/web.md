@@ -21,12 +21,12 @@ Content-Type: application/json; charset=UTF-8
 Date: Sat, 21 Jan 2017 05:39:29 GMT
 
 {
-    "avast": {
-        "database": "4477/13807",
-        "engine": "13.0.3114",
-        "infected": true,
-        "result": "Found Win32/DH{CGE?}",
-        "updated": "20170121"
-    }
+  "avast": {
+    "infected": true,
+    "result": "EICAR Test-NOT virus!!!",
+    "engine": "2.1.2",
+    "database": "17012800",
+    "updated": "20170129"
+  }
 }
 ```

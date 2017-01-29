@@ -25,3 +25,11 @@ _testmain.go
 
 *.bu
 results.json
+
+lic
+
+init
+
+*.centos
+
+*.deb

@@ -1,7 +1,7 @@
 malice-avast
 ============
 
-[![Circle CI](https://circleci.com/gh/maliceio/malice-avast.png?style=shield)](https://circleci.com/gh/maliceio/malice-avast) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/avast.svg)](https://hub.docker.com/r/malice/avast/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/avast.svg)](https://hub.docker.com/r/malice/avast/) [![Docker Image](https://img.shields.io/badge/docker image-465 MB-blue.svg)](https://hub.docker.com/r/malice/avast/)
+[![Circle CI](https://circleci.com/gh/maliceio/malice-avast.png?style=shield)](https://circleci.com/gh/maliceio/malice-avast) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/avast.svg)](https://hub.docker.com/r/malice/avast/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/avast.svg)](https://hub.docker.com/r/malice/avast/) [![Docker Image](https://img.shields.io/badge/docker image-398 MB-blue.svg)](https://hub.docker.com/r/malice/avast/)
 
 This repository contains a **Dockerfile** of [avast](https://www.avast.com/en-us/linux-server-antivirus) for [Docker](https://www.docker.io/)'s [trusted build](https://index.docker.io/u/malice/avast/) published to the public [DockerHub](https://index.docker.io/).
 
@@ -20,6 +20,14 @@ This repository contains a **Dockerfile** of [avast](https://www.avast.com/en-us
 docker run --rm malice/avast EICAR
 ```
 
+> **NOTE:** License expires in 30 days - https://www.avast.com/business-trial-form-linux.php
+
+### Use your own license.key
+
+```
+docker run --rm -v `pwd`/license.avastlic:/etc/avast/license.avastlic malice/avast EICAR
+```
+
 #### Or link your own malware folder:
 
 ```bash
@@ -29,7 +37,7 @@ Usage: avast [OPTIONS] COMMAND [arg...]
 
 Malice Avast AntiVirus Plugin
 
-Version: v0.1.0, BuildTime: 20170122
+Version: v0.1.0, BuildTime: 20170129
 
 Author:
   blacktop - <https://github.com/blacktop>
@@ -62,8 +70,8 @@ Sample Output
     "infected": true,
     "result": "EICAR Test-NOT virus!!!",
     "engine": "2.1.2",
-    "database": "16061703",
-    "updated": "20160618"
+    "database": "17012800",
+    "updated": "20170129"
   }
 }
 ```
@@ -75,8 +83,8 @@ Sample Output
 #### Avast
 
 | Infected | Result                  | Engine | Updated  |
-| -------- | ----------------------- | ------ | -------- |
-| true     | EICAR Test-NOT virus!!! | 2.1.2  | 20160618 |
+|----------|-------------------------|--------|----------|
+| true     | EICAR Test-NOT virus!!! | 2.1.2  | 20170129 |
 
 ---
 
