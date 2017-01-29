@@ -99,7 +99,11 @@ func AvScan(timeout int) Avast {
 // ParseAvastOutput convert avast output into ResultsData struct
 func ParseAvastOutput(avastout string, path string) (ResultsData, error) {
 
-	log.Debug("Avast Output: ", avastout)
+	log.WithFields(log.Fields{
+		"plugin":   name,
+		"category": category,
+		"path":     path,
+	}).Debug("Avast Output: ", avastout)
 
 	avast := ResultsData{
 		Infected: false,
@@ -181,7 +185,10 @@ func printStatus(resp gorequest.Response, body string, errs []error) {
 func webService() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/scan", webAvScan).Methods("POST")
-	log.Info("web service listening on port :3993")
+	log.WithFields(log.Fields{
+		"plugin":   name,
+		"category": category,
+	}).Info("web service listening on port :3993")
 	log.Fatal(http.ListenAndServe(":3993", router))
 }
 
@@ -192,25 +199,29 @@ func webAvScan(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		fmt.Fprintln(w, "Please supply a valid file to scan.")
-		log.Error(err)
+		log.WithFields(log.Fields{
+			"plugin":   name,
+			"category": category,
+		}).Error(err)
 	}
 	defer file.Close()
 
-	log.Debug("Uploaded fileName: ", header.Filename)
+	log.WithFields(log.Fields{
+		"plugin":   name,
+		"category": category,
+	}).Debug("Uploaded fileName: ", header.Filename)
 
 	tmpfile, err := ioutil.TempFile("/malware", "web_")
-	if err != nil {
-		log.Fatal(err)
-	}
+	assert(err)
 	defer os.Remove(tmpfile.Name()) // clean up
 
 	data, err := ioutil.ReadAll(file)
 
 	if _, err = tmpfile.Write(data); err != nil {
-		log.Fatal(err)
+		assert(err)
 	}
 	if err = tmpfile.Close(); err != nil {
-		log.Fatal(err)
+		assert(err)
 	}
 
 	// Do AV scan
@@ -221,7 +232,7 @@ func webAvScan(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 
 	if err := json.NewEncoder(w).Encode(avast); err != nil {
-		log.Fatal(err)
+		assert(err)
 	}
 }
 
@@ -283,11 +294,7 @@ func main() {
 			Name:  "web",
 			Usage: "Create a Avast scan web service",
 			Action: func(c *cli.Context) error {
-				// ctx, cancel := context.WithTimeout(context.Background(), time.Duration(c.Int("timeout"))*time.Second)
-				// defer cancel()
-
 				webService()
-
 				return nil
 			},
 		},
@@ -337,7 +344,10 @@ func main() {
 				fmt.Println(string(avastJSON))
 			}
 		} else {
-			log.Fatal(fmt.Errorf("Please supply a file to scan with malice/avast"))
+			log.WithFields(log.Fields{
+				"plugin":   name,
+				"category": category,
+			}).Fatal(fmt.Errorf("Please supply a file to scan with malice/avast"))
 		}
 		return nil
 	}
