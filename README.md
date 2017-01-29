@@ -80,7 +80,7 @@ Sample Output
 
 ---
 
-> **NOTE:** License expires in 30 days - https://www.avast.com/business-trial-form-linux.php
+> **NOTE:** License expires in 30 days - https://www.avast.com/registration-free-antivirus.php OR https://www.avast.com/linux-server-antivirus
 
 ### Use your own license key
 

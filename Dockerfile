@@ -63,3 +63,4 @@ CMD ["--help"]
 
 # http://files.avast.com/lin/repo/pool/avast_2.1.2-1_amd64.deb
 # http://files.avast.com/lin/repo/pool/avast-fss_1.0.11-1_amd64.deb
+# https://www.avast.com/registration-free-antivirus.php
