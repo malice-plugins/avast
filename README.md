@@ -20,14 +20,6 @@ This repository contains a **Dockerfile** of [avast](https://www.avast.com/en-us
 docker run --rm malice/avast EICAR
 ```
 
-> **NOTE:** License expires in 30 days - https://www.avast.com/business-trial-form-linux.php
-
-### Use your own license.key
-
-```
-docker run --rm -v `pwd`/license.avastlic:/etc/avast/license.avastlic malice/avast EICAR
-```
-
 #### Or link your own malware folder:
 
 ```bash
@@ -87,6 +79,14 @@ Sample Output
 | true     | EICAR Test-NOT virus!!! | 2.1.2  | 20170129 |
 
 ---
+
+> **NOTE:** License expires in 30 days - https://www.avast.com/business-trial-form-linux.php
+
+### Use your own license key
+
+```
+docker run --rm -v `pwd`/license.avastlic:/etc/avast/license.avastlic malice/avast EICAR
+```
 
 Documentation
 -------------
