@@ -11,5 +11,6 @@ Makefile
 docs*
 run.sh
 results.json
-
-# avastrc
+*.deb
+avast.gpg
+avastrc
