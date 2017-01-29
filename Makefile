@@ -14,6 +14,7 @@ tags:
 	docker images --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}" $(REPO)/$(NAME)
 
 test:
+	docker run --init --rm $(REPO)/$(NAME):$(VERSION)
 	docker run --init --rm $(REPO)/$(NAME):$(VERSION) -V EICAR > results.json
 	cat results.json | jq .
 
