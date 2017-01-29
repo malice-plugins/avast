@@ -81,13 +81,13 @@ func AvScan(timeout int) Avast {
 
 	output, err := utils.RunCommand(ctx, "scan", "-abfu", path)
 	assert(err)
-	results, err = ParseAvastOutput(output, path)
+	results, err = ParseAvastOutput(output)
 
 	if err != nil {
 		// If fails try a second time
 		output, err := utils.RunCommand(ctx, "scan", "-abfu", path)
 		assert(err)
-		results, err = ParseAvastOutput(output, path)
+		results, err = ParseAvastOutput(output)
 		assert(err)
 	}
 
@@ -97,7 +97,7 @@ func AvScan(timeout int) Avast {
 }
 
 // ParseAvastOutput convert avast output into ResultsData struct
-func ParseAvastOutput(avastout string, path string) (ResultsData, error) {
+func ParseAvastOutput(avastout string) (ResultsData, error) {
 
 	log.WithFields(log.Fields{
 		"plugin":   name,
@@ -300,16 +300,17 @@ func main() {
 		},
 	}
 	app.Action = func(c *cli.Context) error {
+		var err error
 
 		if c.Bool("verbose") {
 			log.SetLevel(log.DebugLevel)
 		}
 
 		if c.Args().Present() {
-			path, err := filepath.Abs(c.Args().First())
+			path, err = filepath.Abs(c.Args().First())
 			assert(err)
 
-			if _, err := os.Stat(path); os.IsNotExist(err) {
+			if _, err = os.Stat(path); os.IsNotExist(err) {
 				assert(err)
 			}
 
