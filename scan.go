@@ -28,6 +28,8 @@ var Version string
 // BuildTime stores the plugin's build time
 var BuildTime string
 
+var path string
+
 const (
 	name     = "avast"
 	category = "av"
@@ -52,15 +54,25 @@ type ResultsData struct {
 	Updated  string `json:"updated" gorethink:"updated"`
 }
 
+func assert(err error) {
+	if err != nil {
+		log.WithFields(log.Fields{
+			"plugin":   name,
+			"category": category,
+			"path":     path,
+		}).Fatal(err)
+	}
+}
+
 // AvScan performs antivirus scan
-func AvScan(path string, timeout int) Avast {
+func AvScan(timeout int) Avast {
 
 	// Give avastd 10 seconds to finish
-	avastdCtx, avastdCancel := context.WithTimeout(context.Background(), time.Duration(10)*time.Second)
+	avastdCtx, avastdCancel := context.WithTimeout(context.Background(), time.Duration(30)*time.Second)
 	defer avastdCancel()
 	// Avast needs to have the daemon started first
 	_, err := utils.RunCommand(avastdCtx, "/etc/init.d/avast", "start")
-	utils.Assert(err)
+	assert(err)
 
 	var results ResultsData
 
@@ -68,15 +80,15 @@ func AvScan(path string, timeout int) Avast {
 	defer cancel()
 
 	output, err := utils.RunCommand(ctx, "scan", "-abfu", path)
-	utils.Assert(err)
+	assert(err)
 	results, err = ParseAvastOutput(output, path)
 
 	if err != nil {
 		// If fails try a second time
 		output, err := utils.RunCommand(ctx, "scan", "-abfu", path)
-		utils.Assert(err)
+		assert(err)
 		results, err = ParseAvastOutput(output, path)
-		utils.Assert(err)
+		assert(err)
 	}
 
 	return Avast{
@@ -109,14 +121,14 @@ func ParseAvastOutput(avastout string, path string) (ResultsData, error) {
 // Get Anti-Virus scanner version
 func getAvastVersion() string {
 	versionOut, err := utils.RunCommand(nil, "/bin/scan", "-v")
-	utils.Assert(err)
+	assert(err)
 	log.Debug("Avast Version: ", versionOut)
 	return strings.TrimSpace(versionOut)
 }
 
 func getAvastVPS() string {
 	versionOut, err := utils.RunCommand(nil, "/bin/scan", "-V")
-	utils.Assert(err)
+	assert(err)
 	log.Debug("Avast Database: ", versionOut)
 	return strings.TrimSpace(versionOut)
 }
@@ -132,7 +144,7 @@ func getUpdatedDate() string {
 		return BuildTime
 	}
 	updated, err := ioutil.ReadFile("/opt/malice/UPDATED")
-	utils.Assert(err)
+	assert(err)
 	return string(updated)
 }
 
@@ -202,7 +214,8 @@ func webAvScan(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Do AV scan
-	avast := AvScan(tmpfile.Name(), 60)
+	path = tmpfile.Name()
+	avast := AvScan(60)
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
@@ -252,7 +265,7 @@ func main() {
 		},
 		cli.IntFlag{
 			Name:   "timeout",
-			Value:  60,
+			Value:  120,
 			Usage:  "malice plugin timeout (in seconds)",
 			EnvVar: "MALICE_TIMEOUT",
 		},
@@ -287,13 +300,13 @@ func main() {
 
 		if c.Args().Present() {
 			path, err := filepath.Abs(c.Args().First())
-			utils.Assert(err)
+			assert(err)
 
 			if _, err := os.Stat(path); os.IsNotExist(err) {
-				utils.Assert(err)
+				assert(err)
 			}
 
-			avast := AvScan(path, c.Int("timeout"))
+			avast := AvScan(c.Int("timeout"))
 
 			// upsert into Database
 			elasticsearch.InitElasticSearch(elastic)
@@ -308,7 +321,7 @@ func main() {
 				printMarkDownTable(avast)
 			} else {
 				avastJSON, err := json.Marshal(avast)
-				utils.Assert(err)
+				assert(err)
 				if c.Bool("callback") {
 					request := gorequest.New()
 					if c.Bool("proxy") {
@@ -330,5 +343,5 @@ func main() {
 	}
 
 	err := app.Run(os.Args)
-	utils.Assert(err)
+	assert(err)
 }
