@@ -68,7 +68,7 @@ func assert(err error) {
 func AvScan(timeout int) Avast {
 
 	// Give avastd 10 seconds to finish
-	avastdCtx, avastdCancel := context.WithTimeout(context.Background(), time.Duration(30)*time.Second)
+	avastdCtx, avastdCancel := context.WithTimeout(context.Background(), time.Duration(timeout)*time.Second)
 	defer avastdCancel()
 	// Avast needs to have the daemon started first
 	_, err := utils.RunCommand(avastdCtx, "/etc/init.d/avast", "start")
