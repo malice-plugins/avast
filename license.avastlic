@@ -23,7 +23,7 @@ ResellerEmail=business-sales@avast.com
 #
 # Customer name (license holder)
 #
-CustomerName=Ted Williams
+CustomerName=Felix Faterer
 
 #
 # Customer number
@@ -33,12 +33,12 @@ CustomerNumber=999999
 #
 # Name of customer company
 #
-CustomerCompany=TeddTown
+CustomerCompany=Texas Roadhouse
 
 #
 # Number of licensed products (covered by this file)
 #
-CertificateCount=2
+CertificateCount=1
 
 #
 # Section for licensed product 1
@@ -51,9 +51,9 @@ CertificateCount=2
 Feature=AV_LNX
 
 #
-# License creation date: Jan 29, 2017
+# License creation date: Apr 16, 2017
 #
-Issued=1485661468
+Issued=1492365016
 
 #
 # License expiry date: <never expires>
@@ -61,9 +61,9 @@ Issued=1485661468
 ValidThru=0
 
 #
-# Update license expiry date: Feb 28, 2017
+# Update license expiry date: May 16, 2017
 #
-UpdateValidThru=1488253468
+UpdateValidThru=1494957016
 
 #
 # Number of licensed items
@@ -89,54 +89,5 @@ ResellerId=3750
 LicenseType=15
 
 
-#
-# Section for licensed product 2
-#
-[Certificate1]
-
-#
-# Name of product: avast! File Server Security for Linux
-#
-Feature=AV_FLNX
-
-#
-# License creation date: Jan 29, 2017
-#
-Issued=1485661468
-
-#
-# License expiry date: <never expires>
-#
-ValidThru=0
-
-#
-# Update license expiry date: Feb 28, 2017
-#
-UpdateValidThru=1488253468
-
-#
-# Number of licensed items
-#
-LicenseCount=1
-
-#
-# License Identifier
-#
-LicenseId=00000000-0000-0000-0000-000000000000
-
-#
-# Reseller Identifier
-#
-ResellerId=3750
-
-#
-# Product type
-#   4 = Demo
-#   8 = Special trial
-#   15 = Trial
-#
-LicenseType=15
-
-
-ASWSignAA393FC4BC2C69FE8CDC68E0AA1D652AF8B1A393B09789EB387F4D71C6A5DC374B60F96D8949F3935ASWSignA
-ASWSignAA837536D9D02F386FA231A6D8E636AB7433714087F74AC99122647E97DA27CD7F626DF870AABF318ASWSignA
+ASWSignA69DA205036642D15A81BD4D13DAF064863C6E6637D08F79504015F00894A051D40A41CE18A6B80E4ASWSignA
+ASWSignAA237A6B01E64930ED0044F1023E4D47941742F0F0F9B47E983BBC1166104418109A506A6A328D36BASWSignA

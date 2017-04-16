@@ -24,7 +24,7 @@ RUN apt-get update -qq \
 # Update Avast Definitions
 RUN echo "===> Update Avast..." && /var/lib/avast/Setup/avast.vpsupdate
 
-ENV GO_VERSION 1.7.5
+ENV GO_VERSION 1.8.1
 
 # Install Go binary
 COPY . /go/src/github.com/maliceio/malice-avast
