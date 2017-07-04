@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -17,7 +19,6 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/maliceio/go-plugin-utils/database/elasticsearch"
 	"github.com/maliceio/go-plugin-utils/utils"
-	"github.com/maliceio/malice/utils/clitable"
 	"github.com/parnurzeal/gorequest"
 	"github.com/urfave/cli"
 )
@@ -52,15 +53,18 @@ type ResultsData struct {
 	Engine   string `json:"engine" gorethink:"engine"`
 	Database string `json:"database" gorethink:"database"`
 	Updated  string `json:"updated" gorethink:"updated"`
+	MarkDown string `json:"markdown,omitempty" structs:"markdown,omitempty"`
 }
 
 func assert(err error) {
 	if err != nil {
-		log.WithFields(log.Fields{
-			"plugin":   name,
-			"category": category,
-			"path":     path,
-		}).Fatal(err)
+		if err.Error() != "exit status 1" {
+			log.WithFields(log.Fields{
+				"plugin":   name,
+				"category": category,
+				"path":     path,
+			}).Fatal(err)
+		}
 	}
 }
 
@@ -164,18 +168,17 @@ func updateAV(ctx context.Context) error {
 	return err
 }
 
-func printMarkDownTable(avast Avast) {
+func generateMarkDownTable(a Avast) string {
+	var tplOut bytes.Buffer
 
-	fmt.Println("#### Avast")
-	table := clitable.New([]string{"Infected", "Result", "Engine", "Updated"})
-	table.AddRow(map[string]interface{}{
-		"Infected": avast.Results.Infected,
-		"Result":   avast.Results.Result,
-		"Engine":   avast.Results.Engine,
-		"Updated":  avast.Results.Updated,
-	})
-	table.Markdown = true
-	table.Print()
+	t := template.Must(template.New("avast").Parse(tpl))
+
+	err := t.Execute(&tplOut, a)
+	if err != nil {
+		log.Println("executing template:", err)
+	}
+
+	return tplOut.String()
 }
 
 func printStatus(resp gorequest.Response, body string, errs []error) {
@@ -216,6 +219,7 @@ func webAvScan(w http.ResponseWriter, r *http.Request) {
 	defer os.Remove(tmpfile.Name()) // clean up
 
 	data, err := ioutil.ReadAll(file)
+	assert(err)
 
 	if _, err = tmpfile.Write(data); err != nil {
 		assert(err)
@@ -316,7 +320,7 @@ func main() {
 			}
 
 			avast := AvScan(c.Int("timeout"))
-
+			avast.Results.MarkDown = generateMarkDownTable(avast)
 			// upsert into Database
 			elasticsearch.InitElasticSearch(elastic)
 			elasticsearch.WritePluginResultsToDatabase(elasticsearch.PluginResults{
@@ -327,8 +331,9 @@ func main() {
 			})
 
 			if c.Bool("table") {
-				printMarkDownTable(avast)
+				fmt.Printf(avast.Results.MarkDown)
 			} else {
+				avast.Results.MarkDown = ""
 				avastJSON, err := json.Marshal(avast)
 				assert(err)
 				if c.Bool("callback") {

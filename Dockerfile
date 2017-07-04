@@ -1,7 +1,13 @@
-FROM ubuntu:precise
+FROM ubuntu
+# FROM ubuntu:precise
 # FROM debian:jessie
 
 LABEL maintainer "https://github.com/blacktop"
+
+LABEL malice.plugin.repository = "https://github.com/malice-plugins/avast.git"
+LABEL malice.plugin.category="av"
+LABEL malice.plugin.mime="*"
+LABEL malice.plugin.docker.engine="*"
 
 # ENV AVAST_VERSION 2.1.2-1
 
@@ -24,7 +30,7 @@ RUN apt-get update -qq \
 # Update Avast Definitions
 RUN echo "===> Update Avast..." && /var/lib/avast/Setup/avast.vpsupdate
 
-ENV GO_VERSION 1.8.1
+ENV GO_VERSION 1.8.3
 
 # Install Go binary
 COPY . /go/src/github.com/maliceio/malice-avast
