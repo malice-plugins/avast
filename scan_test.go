@@ -1,38 +1,48 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"io/ioutil"
+	"strings"
+	"testing"
+)
 
 // TestParseResult tests the __ function.
 func TestParseResult(t *testing.T) {
-	// b, err := ioutil.ReadFile("tests/av_scan.out")
-	// if err != nil {
-	// 	fmt.Print(err)
-	// }
-	//
-	// results, err := parseOutput(string(b))
-	//
-	// if err != nil {
-	// 	t.Log(err)
-	// }
-	//
-	// if true {
-	// 	t.Log("results: ", results)
-	// }
+	r, err := ioutil.ReadFile("tests/av_scan.out")
+	if err != nil {
+		fmt.Print(err)
+	}
+
+	result := strings.Split(string(r), "\t")
+
+	if !strings.Contains(string(r), "[OK]") {
+		if true {
+			t.Log("Infected: ", true)
+			t.Log("Result: ", strings.TrimSpace(result[1]))
+		}
+	}
 
 }
 
 // TestParseVersion tests the __ function.
 func TestParseVersion(t *testing.T) {
-	// b, err := ioutil.ReadFile("tests/av_scan.out")
-	// if err != nil {
-	// 	fmt.Print(err)
-	// }
-	//
-	// version, database := parseVersion(string(b))
-	//
-	// if true {
-	// 	t.Log("version: ", version)
-	// 	t.Log("database: ", database)
-	// }
+	v, err := ioutil.ReadFile("tests/av_version.out")
+	if err != nil {
+		fmt.Print(err)
+	}
+
+	d, err := ioutil.ReadFile("tests/av_vps.out")
+	if err != nil {
+		fmt.Print(err)
+	}
+
+	version := strings.TrimSpace(string(v))
+	database := strings.TrimSpace(string(d))
+
+	if true {
+		t.Log("version: ", version)
+		t.Log("database: ", database)
+	}
 
 }

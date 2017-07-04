@@ -1,18 +1,18 @@
 malice-avast
 ============
 
-[![Circle CI](https://circleci.com/gh/malice-plugins/avast.png?style=shield)](https://circleci.com/gh/malice-plugins/avast) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/avast.svg)](https://hub.docker.com/r/malice/avast/) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/avast.svg)](https://hub.docker.com/r/malice/avast/) [![Docker Image](https://img.shields.io/badge/docker%20image-473MB-blue.svg)](https://hub.docker.com/r/malice/avast/)
+[![Circle CI](https://circleci.com/gh/malice-plugins/avast.png?style=shield)](https://circleci.com/gh/malice-plugins/avast) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Image](https://img.shields.io/badge/docker%20image-463MB-blue.svg)](https://store.docker.com/community/images/malice/avast)
 
-This repository contains a **Dockerfile** of [avast](https://www.avast.com/en-us/linux-server-antivirus) for [Docker](https://www.docker.io/)'s [trusted build](https://index.docker.io/u/malice/avast/) published to the public [DockerHub](https://index.docker.io/).
+This repository contains a **Dockerfile** of [avast](https://www.avast.com/en-us/linux-server-antivirus) for [Docker](https://www.docker.com/)'s [trusted build](https://store.docker.com/community/images/malice/avast) published to the public [DockerHub](https://index.docker.io/).
 
 ### Dependencies
 
--	[ubuntu:precise (*138 MB*\)](https://hub.docker.com/_/ubuntu/)
+-	[ubuntu:xenial (*118 MB*\)](https://store.docker.com/images/ubuntu)
 
 ### Installation
 
-1.	Install [Docker](https://www.docker.io/).
-2.	Download [trusted build](https://hub.docker.com/r/malice/avast/) from public [DockerHub](https://hub.docker.com): `docker pull malice/avast`
+1.	Install [Docker](https://www.docker.com/).
+2.	Download [trusted build](https://store.docker.com/community/images/malice/avast) from public [docker store](https://store.docker.com): `docker pull malice/avast`
 
 ### Usage
 
@@ -29,7 +29,7 @@ Usage: avast [OPTIONS] COMMAND [arg...]
 
 Malice Avast AntiVirus Plugin
 
-Version: v0.1.0, BuildTime: 20170129
+Version: v0.1.0, BuildTime: 20170704
 
 Author:
   blacktop - <https://github.com/blacktop>
@@ -92,24 +92,24 @@ docker run --rm -v `pwd`/license.avastlic:/etc/avast/license.avastlic malice/ava
 Documentation
 -------------
 
--	[To write results to ElasticSearch](https://github.com/maliceio/malice-avast/blob/master/docs/elasticsearch.md)
--	[To create a Avast scan micro-service](https://github.com/maliceio/malice-avast/blob/master/docs/web.md)
--	[To post results to a webhook](https://github.com/maliceio/malice-avast/blob/master/docs/callback.md)
--	[To update the AV definitions](https://github.com/maliceio/malice-avast/blob/master/docs/update.md)
+-	[To write results to ElasticSearch](https://github.com/malice-plugins/avast/blob/master/docs/elasticsearch.md)
+-	[To create a Avast scan micro-service](https://github.com/malice-plugins/avast/blob/master/docs/web.md)
+-	[To post results to a webhook](https://github.com/malice-plugins/avast/blob/master/docs/callback.md)
+-	[To update the AV definitions](https://github.com/malice-plugins/avast/blob/master/docs/update.md)
 
 ### Issues
 
-Find a bug? Want more features? Find something missing in the documentation? Let me know! Please don't hesitate to [file an issue](https://github.com/maliceio/malice-avast/issues/new).
+Find a bug? Want more features? Find something missing in the documentation? Let me know! Please don't hesitate to [file an issue](https://github.com/malice-plugins/avast/issues/new).
 
 ### CHANGELOG
 
-See [`CHANGELOG.md`](https://github.com/maliceio/malice-avast/blob/master/CHANGELOG.md)
+See [`CHANGELOG.md`](https://github.com/malice-plugins/avast/blob/master/CHANGELOG.md)
 
 ### Contributing
 
-[See all contributors on GitHub](https://github.com/maliceio/malice-avast/graphs/contributors).
+[See all contributors on GitHub](https://github.com/malice-plugins/avast/graphs/contributors).
 
-Please update the [CHANGELOG.md](https://github.com/maliceio/malice-avast/blob/master/CHANGELOG.md) and submit a [Pull Request on GitHub](https://help.github.com/articles/using-pull-requests/).
+Please update the [CHANGELOG.md](https://github.com/malice-plugins/avast/blob/master/CHANGELOG.md) and submit a [Pull Request on GitHub](https://help.github.com/articles/using-pull-requests/).
 
 ### License
 

@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"time"
 
@@ -168,6 +169,39 @@ func updateAV(ctx context.Context) error {
 	return err
 }
 
+func didLicenseExpire() bool {
+	if _, err := os.Stat("/etc/avast/license.avastlic"); os.IsNotExist(err) {
+		log.Fatal("could not find avast license file")
+	}
+	license, err := ioutil.ReadFile("/etc/avast/license.avastlic")
+	assert(err)
+
+	lines := strings.Split(string(license), "\n")
+	// Extract Virus string and extract colon separated lines into an slice
+	for _, line := range lines {
+		if len(line) != 0 {
+			if strings.Contains(line, "UpdateValidThru") {
+				expireDate := strings.TrimSpace(strings.TrimPrefix(line, "UpdateValidThru="))
+				// 1501774374
+				i, err := strconv.ParseInt(expireDate, 10, 64)
+				if err != nil {
+					log.Fatal(err)
+				}
+				expires := time.Unix(i, 0)
+				log.WithFields(log.Fields{
+					"plugin":   name,
+					"category": category,
+					"expired":  expires.Before(time.Now()),
+				}).Debug("Avast License Expires: ", expires)
+				return expires.Before(time.Now())
+			}
+		}
+	}
+
+	log.Error("could not find expiration date in license file")
+	return false
+}
+
 func generateMarkDownTable(a Avast) string {
 	var tplOut bytes.Buffer
 
@@ -317,6 +351,11 @@ func main() {
 
 			if _, err = os.Stat(path); os.IsNotExist(err) {
 				assert(err)
+			}
+
+			if didLicenseExpire() {
+				log.Errorln("avast license has expired")
+				log.Errorln("please get a new one here: https://www.avast.com/linux-server-antivirus")
 			}
 
 			avast := AvScan(c.Int("timeout"))

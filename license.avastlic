@@ -23,7 +23,7 @@ ResellerEmail=business-sales@avast.com
 #
 # Customer name (license holder)
 #
-CustomerName=Felix Faterer
+CustomerName=Clide Williams
 
 #
 # Customer number
@@ -33,7 +33,7 @@ CustomerNumber=999999
 #
 # Name of customer company
 #
-CustomerCompany=Texas Roadhouse
+CustomerCompany=ClideTown
 
 #
 # Number of licensed products (covered by this file)
@@ -51,9 +51,9 @@ CertificateCount=1
 Feature=AV_LNX
 
 #
-# License creation date: Apr 16, 2017
+# License creation date: Jul 4, 2017
 #
-Issued=1492365016
+Issued=1499182374
 
 #
 # License expiry date: <never expires>
@@ -61,9 +61,9 @@ Issued=1492365016
 ValidThru=0
 
 #
-# Update license expiry date: May 16, 2017
+# Update license expiry date: Aug 3, 2017
 #
-UpdateValidThru=1494957016
+UpdateValidThru=1501774374
 
 #
 # Number of licensed items
@@ -89,5 +89,5 @@ ResellerId=3750
 LicenseType=15
 
 
-ASWSignA69DA205036642D15A81BD4D13DAF064863C6E6637D08F79504015F00894A051D40A41CE18A6B80E4ASWSignA
-ASWSignAA237A6B01E64930ED0044F1023E4D47941742F0F0F9B47E983BBC1166104418109A506A6A328D36BASWSignA
+ASWSignA885848159717EA6AD22DD1A09995F3756F6112FC68263B573F662C5AF14FC224C4D3941F779D1E6EASWSignA
+ASWSignAA6CD455AD108A1314CC747C96346FEBB913A9692328AC2535ECB8D9B4F1F54DD136358EF903FC395ASWSignA
