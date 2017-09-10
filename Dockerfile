@@ -26,7 +26,7 @@ RUN apt-get update -qq \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives /tmp/* /var/tmp/*
 
 # Update Avast Definitions
-RUN echo "===> Update Avast..." && /var/lib/avast/Setup/avast.vpsupdate
+RUN mkdir -p /opt/malice && echo "===> Update Avast..." && /var/lib/avast/Setup/avast.vpsupdate
 
 ENV GO_VERSION 1.8.3
 

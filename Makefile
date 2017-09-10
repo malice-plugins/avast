@@ -30,6 +30,9 @@ avtest:
 	@echo "===> Avast EICAR Test"
 	@docker run --init --rm --entrypoint=bash $(ORG)/$(NAME):$(VERSION) -c "/etc/init.d/avast start > /dev/null 2>&1 && scan -abfu EICAR" > tests/av_scan.out || true
 
+update:
+	@docker run --init --rm $(ORG)/$(NAME):$(VERSION) -V update
+
 test:
 	docker run --rm $(ORG)/$(NAME):$(VERSION) --help
 	test -f sample || wget https://github.com/maliceio/malice-av/raw/master/samples/befb88b89c2eb401900a68e9f5b78764203f2b48264fcc3f7121bf04a57fd408 -O sample

@@ -33,3 +33,4 @@ init
 
 *.deb
 sample
+.circleci/build_num
