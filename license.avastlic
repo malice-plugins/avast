@@ -23,7 +23,7 @@ ResellerEmail=business-sales@avast.com
 #
 # Customer name (license holder)
 #
-CustomerName=Tim Tallsman
+CustomerName=Wrinkle Beans
 
 #
 # Customer number
@@ -33,7 +33,7 @@ CustomerNumber=999999
 #
 # Name of customer company
 #
-CustomerCompany=Tall And Square Inc
+CustomerCompany=Toots
 
 #
 # Number of licensed products (covered by this file)
@@ -51,9 +51,9 @@ CertificateCount=2
 Feature=AV_LNX
 
 #
-# License creation date: Mar 16, 2018
+# License creation date: Jul 23, 2018
 #
-Issued=1521239895
+Issued=1532307955
 
 #
 # License expiry date: <never expires>
@@ -61,9 +61,9 @@ Issued=1521239895
 ValidThru=0
 
 #
-# Update license expiry date: Apr 15, 2018
+# Update license expiry date: Aug 22, 2018
 #
-UpdateValidThru=1523828295
+UpdateValidThru=1534899955
 
 #
 # Number of licensed items
@@ -100,9 +100,9 @@ LicenseType=15
 Feature=AV_FLNX
 
 #
-# License creation date: Mar 16, 2018
+# License creation date: Jul 23, 2018
 #
-Issued=1521239895
+Issued=1532307955
 
 #
 # License expiry date: <never expires>
@@ -110,9 +110,9 @@ Issued=1521239895
 ValidThru=0
 
 #
-# Update license expiry date: Apr 15, 2018
+# Update license expiry date: Aug 22, 2018
 #
-UpdateValidThru=1523828295
+UpdateValidThru=1534899955
 
 #
 # Number of licensed items
@@ -138,5 +138,5 @@ ResellerId=3750
 LicenseType=15
 
 
-ASWSignA0FBE9F8D3F777E83EE631AAEE2A7F6BF29BBB82F0AA15AD2FF3329D2E2CAE3B420FC8A5A11E634B0ASWSignA
-ASWSignA928DDA3B02282C7C0E1660CA28A8ECCD7DB9AD39720CD7037A3DEE54CDA30741F5FBB2E4748A2E3AASWSignA
+ASWSignA70F159B1213F3AF5679CDA93AB06DDC5398A24D68F28C000DD1CDF4295CAE70B2338A103E4E6BD91ASWSignA
+ASWSignA22370E6F60ECFB7D4BDC041C83BD03435170361A5F367F7C4DA9B42ABC5DA738F7C34CF78718259EASWSignA
