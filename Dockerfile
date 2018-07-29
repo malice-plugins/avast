@@ -11,7 +11,8 @@ LABEL malice.plugin.docker.engine="*"
 
 # Install Avast AV
 COPY license.avastlic /etc/avast/license.avastlic
-RUN apt-get update -qq \
+RUN set -x \
+  && apt-get update \
   && apt-get install -yq ca-certificates --no-install-recommends \
   && echo "===> Install Avast..." \
   && echo 'deb http://deb.avast.com/lin/repo debian release' >> /etc/apt/sources.list \

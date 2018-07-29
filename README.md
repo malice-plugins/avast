@@ -1,6 +1,6 @@
 # malice-avast
 
-[![Circle CI](https://circleci.com/gh/malice-plugins/avast.png?style=shield)](https://circleci.com/gh/malice-plugins/avast) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Image](https://img.shields.io/badge/docker%20image-463MB-blue.svg)](https://store.docker.com/community/images/malice/avast)
+[![Circle CI](https://circleci.com/gh/malice-plugins/avast.png?style=shield)](https://circleci.com/gh/malice-plugins/avast) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Image](https://img.shields.io/badge/docker%20image-520MB-blue.svg)](https://store.docker.com/community/images/malice/avast)
 
 This repository contains a **Dockerfile** of [avast](https://www.avast.com/en-us/linux-server-antivirus) for [Docker](https://www.docker.com/)'s [trusted build](https://store.docker.com/community/images/malice/avast) published to the public [DockerHub](https://index.docker.io/).
 

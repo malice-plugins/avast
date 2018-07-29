@@ -3,7 +3,7 @@ ORG=malice
 NAME=avast
 CATEGORY=av
 VERSION=$(shell cat VERSION)
-MALWARE=test/malware
+MALWARE=tests/malware
 
 all: build size tag test test_markdown
 
@@ -60,7 +60,7 @@ endif
 malware:
 ifeq (,$(wildcard test/malware))
 	wget https://github.com/maliceio/malice-av/raw/master/samples/befb88b89c2eb401900a68e9f5b78764203f2b48264fcc3f7121bf04a57fd408 -O $(MALWARE)
-	cd test; echo "TEST" > not.malware
+	cd tests; echo "TEST" > not.malware
 endif
 
 .PHONY: test

@@ -5,7 +5,7 @@
 .circleci*
 docs*
 vendor*
-test*
+tests*
 
 README.md
 README.md.bu

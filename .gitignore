@@ -34,5 +34,5 @@ init
 *.deb
 sample
 .circleci/build_num
-test/malware
-test/not.malware
+tests/malware
+tests/not.malware
