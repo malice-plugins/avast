@@ -53,7 +53,7 @@ Run 'avast COMMAND --help' for more information on a command.
 
 ## Sample Output
 
-### JSON:
+### [JSON](https://github.com/malice-plugins/avast/blob/master/docs/results.json)
 
 ```json
 {
@@ -67,7 +67,7 @@ Run 'avast COMMAND --help' for more information on a command.
 }
 ```
 
-### STDOUT (Markdown Table):
+### [Markdown](https://github.com/malice-plugins/avast/blob/master/docs/SAMPLE.md)
 
 ---
 
@@ -94,20 +94,25 @@ docker run --rm -v `pwd`/license.avastlic:/etc/avast/license.avastlic malice/ava
 - [To post results to a webhook](https://github.com/malice-plugins/avast/blob/master/docs/callback.md)
 - [To update the AV definitions](https://github.com/malice-plugins/avast/blob/master/docs/update.md)
 
-### Issues
+## Issues
 
 Find a bug? Want more features? Find something missing in the documentation? Let me know! Please don't hesitate to [file an issue](https://github.com/malice-plugins/avast/issues/new).
 
-### CHANGELOG
+## TODO
+
+- [ ] add configurable re-try count (cuz this AV is weak sauce **YO!**)
+- [ ] add licence expiration detection
+
+## CHANGELOG
 
 See [`CHANGELOG.md`](https://github.com/malice-plugins/avast/blob/master/CHANGELOG.md)
 
-### Contributing
+## Contributing
 
 [See all contributors on GitHub](https://github.com/malice-plugins/avast/graphs/contributors).
 
 Please update the [CHANGELOG.md](https://github.com/malice-plugins/avast/blob/master/CHANGELOG.md) and submit a [Pull Request on GitHub](https://help.github.com/articles/using-pull-requests/).
 
-### License
+## License
 
-MIT Copyright (c) 2016-2018 **blacktop**
+MIT Copyright (c) 2016 **blacktop**
