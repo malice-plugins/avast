@@ -23,7 +23,7 @@ ResellerEmail=business-sales@avast.com
 #
 # Customer name (license holder)
 #
-CustomerName=Wrinkle Beans
+CustomerName=Phils Good
 
 #
 # Customer number
@@ -33,7 +33,7 @@ CustomerNumber=999999
 #
 # Name of customer company
 #
-CustomerCompany=Toots
+CustomerCompany=Feels Good Corp
 
 #
 # Number of licensed products (covered by this file)
@@ -51,9 +51,9 @@ CertificateCount=2
 Feature=AV_LNX
 
 #
-# License creation date: Jul 23, 2018
+# License creation date: Aug 23, 2018
 #
-Issued=1532307955
+Issued=1534984989
 
 #
 # License expiry date: <never expires>
@@ -61,9 +61,9 @@ Issued=1532307955
 ValidThru=0
 
 #
-# Update license expiry date: Aug 22, 2018
+# Update license expiry date: Sep 22, 2018
 #
-UpdateValidThru=1534899955
+UpdateValidThru=1537576989
 
 #
 # Number of licensed items
@@ -100,9 +100,9 @@ LicenseType=15
 Feature=AV_FLNX
 
 #
-# License creation date: Jul 23, 2018
+# License creation date: Aug 23, 2018
 #
-Issued=1532307955
+Issued=1534984989
 
 #
 # License expiry date: <never expires>
@@ -110,9 +110,9 @@ Issued=1532307955
 ValidThru=0
 
 #
-# Update license expiry date: Aug 22, 2018
+# Update license expiry date: Sep 22, 2018
 #
-UpdateValidThru=1534899955
+UpdateValidThru=1537576989
 
 #
 # Number of licensed items
@@ -138,5 +138,5 @@ ResellerId=3750
 LicenseType=15
 
 
-ASWSignA70F159B1213F3AF5679CDA93AB06DDC5398A24D68F28C000DD1CDF4295CAE70B2338A103E4E6BD91ASWSignA
-ASWSignA22370E6F60ECFB7D4BDC041C83BD03435170361A5F367F7C4DA9B42ABC5DA738F7C34CF78718259EASWSignA
+ASWSignA2C79B9986D177FFC8A492A442B4DFF64BD2E796107C99401D01C5722A0789FEE4824501D84276379ASWSignA
+ASWSignA0E508ABE342E54265226B1E39CE2234F07CF8557013A3D512290E4C4BE3A9EEF4D1497FA440FAEC0ASWSignA
