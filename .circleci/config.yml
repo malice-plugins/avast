@@ -60,7 +60,7 @@ jobs:
           command: |
             docker create -v /malware --name malvol2 --entrypoint=sh malice/alpine /bin/true
             docker run --rm -it --volumes-from malvol2 \
-             malice/get-mauled -V download --password infected https://github.com/ytisf/theZoo/raw/master/malwares/Binaries/Trojan.Regin/Trojan.Regin.zip
+             malice/get-mauled -V malware-samples
       - run:
           name: Run tests
           command: |
