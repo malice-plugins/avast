@@ -29,7 +29,7 @@ RUN set -x \
 # Update Avast Definitions
 RUN mkdir -p /opt/malice && echo "===> Update Avast..." && /var/lib/avast/Setup/avast.vpsupdate
 
-ENV GO_VERSION 1.10.3
+ENV GO_VERSION 1.11
 
 # Install Go binary
 COPY . /go/src/github.com/maliceio/malice-avast
