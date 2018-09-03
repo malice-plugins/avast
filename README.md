@@ -1,25 +1,29 @@
-# avast
+# malice-avast
 
 [![Circle CI](https://circleci.com/gh/malice-plugins/avast.png?style=shield)](https://circleci.com/gh/malice-plugins/avast) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Image](https://img.shields.io/badge/docker%20image-520MB-blue.svg)](https://store.docker.com/community/images/malice/avast)
 
-This repository contains a **Dockerfile** of [avast](https://www.avast.com/en-us/linux-server-antivirus) for [Docker](https://www.docker.com/)'s [trusted build](https://store.docker.com/community/images/malice/avast) published to the public [DockerHub](https://index.docker.io/).
+Malice Avast AntiVirus
+
+> This repository contains a **Dockerfile** of [avast](https://www.avast.com/en-us/linux-server-antivirus) for [Docker](https://www.docker.com/)'s [trusted build](https://store.docker.com/community/images/malice/avast) published to the public [DockerHub](https://index.docker.io/).
+
+---
 
 ### Dependencies
 
 - [ubuntu:xenial (_118 MB_\)](https://store.docker.com/images/ubuntu)
 
-### Installation
+## Installation
 
-1.  Install [Docker](https://www.docker.com/).
-2.  Download [trusted build](https://store.docker.com/community/images/malice/avast) from public [docker store](https://store.docker.com): `docker pull malice/avast`
+1. Install [Docker](https://www.docker.com/).
+2. Download [trusted build](https://store.docker.com/community/images/malice/avast) from public [docker store](https://store.docker.com): `docker pull malice/avast`
 
-### Usage
+## Usage
 
 ```
 docker run --rm malice/avast EICAR
 ```
 
-#### Or link your own malware folder:
+### Or link your own malware folder:
 
 ```bash
 $ docker run --rm -v /path/to/malware:/malware:ro malice/avast FILE
