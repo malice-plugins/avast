@@ -172,7 +172,7 @@ func getUpdatedDate() string {
 func updateAV(ctx context.Context) error {
 	fmt.Println("Updating Avast...")
 	// Avast needs to have the daemon started first
-	avastd := exec.CommandContext(ctx, "/etc/init.d/avast", "start")
+	avastd := exec.Command("/etc/init.d/avast", "start")
 	_, err := avastd.Output()
 	assert(err)
 	defer avastd.Process.Kill()
