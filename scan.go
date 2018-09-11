@@ -61,6 +61,7 @@ type ResultsData struct {
 	Database string `json:"database" gorethink:"database"`
 	Updated  string `json:"updated" gorethink:"updated"`
 	MarkDown string `json:"markdown,omitempty" structs:"markdown,omitempty"`
+	Error    string `json:"error,omitempty" structs:"error,omitempty"`
 }
 
 func assert(err error) {
@@ -78,43 +79,48 @@ func assert(err error) {
 // AvScan performs antivirus scan
 func AvScan(timeout int) Avast {
 
-	// Give avastd 10 seconds to finish
-	avastdCtx, avastdCancel := context.WithTimeout(context.Background(), time.Duration(timeout)*time.Second)
-	defer avastdCancel()
-	// Avast needs to have the daemon started first
-	_, err := utils.RunCommand(avastdCtx, "/etc/init.d/avast", "start")
-	assert(err)
-
-	var results ResultsData
+	var output string
+	var avErr error
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Duration(timeout)*time.Second)
 	defer cancel()
 
-	output, err := utils.RunCommand(ctx, "scan", "-abfu", path)
+	// Avast needs to have the daemon started first
+	avastd := exec.CommandContext(ctx, "/etc/init.d/avast", "start")
+	_, err := avastd.Output()
 	assert(err)
-	results, err = ParseAvastOutput(output)
+	defer avastd.Process.Kill()
 
-	if err != nil {
+	time.Sleep(3 * time.Second)
+
+	log.Debug("running scan -abfu")
+	output, avErr = utils.RunCommand(ctx, "scan", "-abfu", path)
+	if avErr != nil {
 		// If fails try a second time
-		output, err := utils.RunCommand(ctx, "scan", "-abfu", path)
-		assert(err)
-		results, err = ParseAvastOutput(output)
+		time.Sleep(7 * time.Second)
+		log.Debug("re-running scan -abfu")
+		output, avErr = utils.RunCommand(ctx, "scan", "-abfu", path)
 		assert(err)
 	}
 
-	return Avast{
-		Results: results,
-	}
+	return Avast{Results: ParseAvastOutput(output, avErr)}
 }
 
 // ParseAvastOutput convert avast output into ResultsData struct
-func ParseAvastOutput(avastout string) (ResultsData, error) {
+func ParseAvastOutput(avastout string, avErr error) ResultsData {
 
 	log.WithFields(log.Fields{
 		"plugin":   name,
 		"category": category,
 		"path":     path,
 	}).Debug("Avast Output: ", avastout)
+
+	if avErr != nil {
+		// ignore exit code 1 as that just means a virus was found
+		if avErr.Error() != "exit status 1" {
+			return ResultsData{Error: avErr.Error()}
+		}
+	}
 
 	avast := ResultsData{
 		Infected: false,
@@ -130,7 +136,7 @@ func ParseAvastOutput(avastout string) (ResultsData, error) {
 		avast.Result = strings.TrimSpace(result[1])
 	}
 
-	return avast, nil
+	return avast
 }
 
 // Get Anti-Virus scanner version
@@ -166,13 +172,17 @@ func getUpdatedDate() string {
 func updateAV(ctx context.Context) error {
 	fmt.Println("Updating Avast...")
 	// Avast needs to have the daemon started first
-	exec.Command("/etc/init.d/avast", "start").Output()
+	avastd := exec.CommandContext(ctx, "/etc/init.d/avast", "start")
+	_, err := avastd.Output()
+	assert(err)
+	defer avastd.Process.Kill()
+
+	time.Sleep(1 * time.Second)
 
 	fmt.Println(utils.RunCommand(ctx, "/var/lib/avast/Setup/avast.vpsupdate"))
 	// Update UPDATED file
 	t := time.Now().Format("20060102")
-	err := ioutil.WriteFile("/opt/malice/UPDATED", []byte(t), 0644)
-	return err
+	return ioutil.WriteFile("/opt/malice/UPDATED", []byte(t), 0644)
 }
 
 func didLicenseExpire() bool {

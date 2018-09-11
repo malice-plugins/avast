@@ -1,5 +1,5 @@
 {
-  "took": 40,
+  "took": 55,
   "timed_out": false,
   "_shards": {
     "total": 1,
@@ -14,43 +14,43 @@
       {
         "_index": "malice",
         "_type": "samples",
-        "_id": "I3fBnGUBcXxpSgRUHlym",
+        "_id": "xT52xmUBclo10KkxfCDK",
         "_score": 1,
         "_source": {
           "plugins": {
             "av": {
               "avast": {
-                "Database": "18090204",
+                "Database": "18090504",
                 "Engine": "2.2.0",
                 "Infected": true,
                 "Result": "Win32:Lecna-I [Trj]",
-                "Updated": "20180903",
-                "markdown": "#### Avast\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Win32:Lecna-I [Trj] | 2.2.0 | 20180903 |\n"
+                "Updated": "20180911",
+                "markdown": "#### Avast\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Win32:Lecna-I [Trj] | 2.2.0 | 20180911 |\n"
               }
             }
           },
-          "scan_date": "2018-09-03T00:07:06.640947973Z"
+          "scan_date": "2018-09-11T02:29:38.626110743Z"
         }
       },
       {
         "_index": "malice",
         "_type": "samples",
-        "_id": "JHfBnGUBcXxpSgRUMFwP",
+        "_id": "xj52xmUBclo10KkxlyA_",
         "_score": 1,
         "_source": {
           "plugins": {
             "av": {
               "avast": {
-                "Database": "18090204",
+                "Database": "18090504",
                 "Engine": "2.2.0",
                 "Infected": false,
                 "Result": "",
-                "Updated": "20180903",
-                "markdown": "#### Avast\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| false |  | 2.2.0 | 20180903 |\n"
+                "Updated": "20180911",
+                "markdown": "#### Avast\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| false |  | 2.2.0 | 20180911 |\n"
               }
             }
           },
-          "scan_date": "2018-09-03T00:07:11.117232295Z"
+          "scan_date": "2018-09-11T02:29:45.404911311Z"
         }
       }
     ]
