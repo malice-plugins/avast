@@ -23,7 +23,7 @@ ResellerEmail=business-sales@avast.com
 #
 # Customer name (license holder)
 #
-CustomerName=Phils Good
+CustomerName=Stinky Pete
 
 #
 # Customer number
@@ -33,7 +33,7 @@ CustomerNumber=999999
 #
 # Name of customer company
 #
-CustomerCompany=Feels Good Corp
+CustomerCompany=PeteMeat
 
 #
 # Number of licensed products (covered by this file)
@@ -51,9 +51,9 @@ CertificateCount=2
 Feature=AV_LNX
 
 #
-# License creation date: Aug 23, 2018
+# License creation date: Nov 24, 2018
 #
-Issued=1534984989
+Issued=1543075634
 
 #
 # License expiry date: <never expires>
@@ -61,9 +61,9 @@ Issued=1534984989
 ValidThru=0
 
 #
-# Update license expiry date: Sep 22, 2018
+# Update license expiry date: Dec 24, 2018
 #
-UpdateValidThru=1537576989
+UpdateValidThru=1545667634
 
 #
 # Number of licensed items
@@ -100,9 +100,9 @@ LicenseType=15
 Feature=AV_FLNX
 
 #
-# License creation date: Aug 23, 2018
+# License creation date: Nov 24, 2018
 #
-Issued=1534984989
+Issued=1543075634
 
 #
 # License expiry date: <never expires>
@@ -110,9 +110,9 @@ Issued=1534984989
 ValidThru=0
 
 #
-# Update license expiry date: Sep 22, 2018
+# Update license expiry date: Dec 24, 2018
 #
-UpdateValidThru=1537576989
+UpdateValidThru=1545667634
 
 #
 # Number of licensed items
@@ -138,5 +138,5 @@ ResellerId=3750
 LicenseType=15
 
 
-ASWSignA2C79B9986D177FFC8A492A442B4DFF64BD2E796107C99401D01C5722A0789FEE4824501D84276379ASWSignA
-ASWSignA0E508ABE342E54265226B1E39CE2234F07CF8557013A3D512290E4C4BE3A9EEF4D1497FA440FAEC0ASWSignA
+ASWSignA1D44875F829F21E85A45B3C5A12C9ECF0098C360123D38A93A4D3C6E1343BD5A9EFE4DCFF616B18AASWSignA
+ASWSignA11EFD58120CB2630627582DF6D07212A683B7E1E0FCE12F2803FC941C1FB912DCD9ED30AD18D435AASWSignA
