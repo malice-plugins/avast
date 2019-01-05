@@ -1,6 +1,6 @@
 # malice-avast
 
-[![Circle CI](https://circleci.com/gh/malice-plugins/avast.png?style=shield)](https://circleci.com/gh/malice-plugins/avast) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Image](https://img.shields.io/badge/docker%20image-509MB-blue.svg)](https://store.docker.com/community/images/malice/avast)
+[![Circle CI](https://circleci.com/gh/malice-plugins/avast.png?style=shield)](https://circleci.com/gh/malice-plugins/avast) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Docker Stars](https://img.shields.io/docker/stars/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Pulls](https://img.shields.io/docker/pulls/malice/avast.svg)](https://store.docker.com/community/images/malice/avast) [![Docker Image](https://img.shields.io/badge/docker%20image-508MB-blue.svg)](https://store.docker.com/community/images/malice/avast)
 
 Malice Avast AntiVirus
 
