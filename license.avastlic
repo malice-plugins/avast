@@ -23,7 +23,7 @@ ResellerEmail=business-sales@avast.com
 #
 # Customer name (license holder)
 #
-CustomerName=Stinky Pete
+CustomerName=Will Weaksauce
 
 #
 # Customer number
@@ -33,12 +33,12 @@ CustomerNumber=999999
 #
 # Name of customer company
 #
-CustomerCompany=PeteMeat
+CustomerCompany=TrunkJunk
 
 #
 # Number of licensed products (covered by this file)
 #
-CertificateCount=2
+CertificateCount=1
 
 #
 # Section for licensed product 1
@@ -51,9 +51,9 @@ CertificateCount=2
 Feature=AV_LNX
 
 #
-# License creation date: Nov 24, 2018
+# License creation date: Jan 5, 2019
 #
-Issued=1543075634
+Issued=1546712241
 
 #
 # License expiry date: <never expires>
@@ -61,9 +61,9 @@ Issued=1543075634
 ValidThru=0
 
 #
-# Update license expiry date: Dec 24, 2018
+# Update license expiry date: Feb 4, 2019
 #
-UpdateValidThru=1545667634
+UpdateValidThru=1549304241
 
 #
 # Number of licensed items
@@ -89,54 +89,5 @@ ResellerId=3750
 LicenseType=15
 
 
-#
-# Section for licensed product 2
-#
-[Certificate1]
-
-#
-# Name of product: avast! File Server Security for Linux
-#
-Feature=AV_FLNX
-
-#
-# License creation date: Nov 24, 2018
-#
-Issued=1543075634
-
-#
-# License expiry date: <never expires>
-#
-ValidThru=0
-
-#
-# Update license expiry date: Dec 24, 2018
-#
-UpdateValidThru=1545667634
-
-#
-# Number of licensed items
-#
-LicenseCount=1
-
-#
-# License Identifier
-#
-LicenseId=00000000-0000-0000-0000-000000000000
-
-#
-# Reseller Identifier
-#
-ResellerId=3750
-
-#
-# Product type
-#   4 = Demo
-#   8 = Special trial
-#   15 = Trial
-#
-LicenseType=15
-
-
-ASWSignA1D44875F829F21E85A45B3C5A12C9ECF0098C360123D38A93A4D3C6E1343BD5A9EFE4DCFF616B18AASWSignA
-ASWSignA11EFD58120CB2630627582DF6D07212A683B7E1E0FCE12F2803FC941C1FB912DCD9ED30AD18D435AASWSignA
+ASWSignA746589E312C5D859250AFE8605A0F690254B3BC1466D08BAB1E5400BAD07E439F8D74D7FE891510DASWSignA
+ASWSignA3A19EBA48AAC45F1D2D71BD1E92EB2EB0544D3614C1B0F01ACFC27E4A093A5AEF3E8CAECADDFA9ABASWSignA
