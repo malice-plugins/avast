@@ -44,7 +44,10 @@ avtest:
 	@docker run --init --rm --entrypoint=bash $(ORG)/$(NAME):$(VERSION) -c "/etc/init.d/avast start > /dev/null 2>&1 && scan -V" > tests/av_vps.out
 	@echo "===> Avast EICAR Test"
 	@docker run --init --rm --entrypoint=bash $(ORG)/$(NAME):$(VERSION) -c "/etc/init.d/avast start > /dev/null 2>&1 && scan -abfu EICAR" > tests/av_scan.out || true
-
+	@echo "===>  $(MALWARE) Test"
+	@docker run --init -it --rm --entrypoint=bash -v $(PWD)/tests:/malware/tests $(ORG)/$(NAME):$(VERSION) -c "MALWARE=$(MALWARE) tests/test_malware.sh" > tests/av_malware_scan.out || true
+	@echo "===>  $(NOT_MALWARE) Test"
+	@docker run --init -it --rm --entrypoint=bash -v $(PWD)/tests:/malware/tests $(ORG)/$(NAME):$(VERSION) -c "MALWARE=$(NOT_MALWARE) tests/test_malware.sh" > tests/av_clean_scan.out || true
 update:
 	@docker run --init --rm $(ORG)/$(NAME):$(VERSION) -V update
 
