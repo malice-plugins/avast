@@ -23,7 +23,7 @@ ResellerEmail=business-sales@avast.com
 #
 # Customer name (license holder)
 #
-CustomerName=Will Weaksauce
+CustomerName=Frank Tight
 
 #
 # Customer number
@@ -33,12 +33,12 @@ CustomerNumber=999999
 #
 # Name of customer company
 #
-CustomerCompany=TrunkJunk
+CustomerCompany=TightenUp
 
 #
 # Number of licensed products (covered by this file)
 #
-CertificateCount=1
+CertificateCount=2
 
 #
 # Section for licensed product 1
@@ -51,9 +51,9 @@ CertificateCount=1
 Feature=AV_LNX
 
 #
-# License creation date: Jan 5, 2019
+# License creation date: Feb 9, 2019
 #
-Issued=1546712241
+Issued=1549735164
 
 #
 # License expiry date: <never expires>
@@ -61,9 +61,9 @@ Issued=1546712241
 ValidThru=0
 
 #
-# Update license expiry date: Feb 4, 2019
+# Update license expiry date: Mar 11, 2019
 #
-UpdateValidThru=1549304241
+UpdateValidThru=1552327164
 
 #
 # Number of licensed items
@@ -89,5 +89,54 @@ ResellerId=3750
 LicenseType=15
 
 
-ASWSignA746589E312C5D859250AFE8605A0F690254B3BC1466D08BAB1E5400BAD07E439F8D74D7FE891510DASWSignA
-ASWSignA3A19EBA48AAC45F1D2D71BD1E92EB2EB0544D3614C1B0F01ACFC27E4A093A5AEF3E8CAECADDFA9ABASWSignA
+#
+# Section for licensed product 2
+#
+[Certificate1]
+
+#
+# Name of product: avast! File Server Security for Linux
+#
+Feature=AV_FLNX
+
+#
+# License creation date: Feb 9, 2019
+#
+Issued=1549735164
+
+#
+# License expiry date: <never expires>
+#
+ValidThru=0
+
+#
+# Update license expiry date: Mar 11, 2019
+#
+UpdateValidThru=1552327164
+
+#
+# Number of licensed items
+#
+LicenseCount=1
+
+#
+# License Identifier
+#
+LicenseId=00000000-0000-0000-0000-000000000000
+
+#
+# Reseller Identifier
+#
+ResellerId=3750
+
+#
+# Product type
+#   4 = Demo
+#   8 = Special trial
+#   15 = Trial
+#
+LicenseType=15
+
+
+ASWSignA08AEB3A60C7B8E41E555B0EF30E744BB9A7961ABA810A69FEBBCD204CE43ED5D95E24C4EE38F604CASWSignA
+ASWSignA864E150EDBB51CD1FFBD528D7D04FCD8DF931C2482507BECF4EE4D589698CBD8B9458882A97CB006ASWSignA
