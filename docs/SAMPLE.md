@@ -1,10 +1,10 @@
 #### Avast
 | Infected      | Result      | Engine      | Updated      |
 |:-------------:|:-----------:|:-----------:|:------------:|
-| true | Win32:Lecna-I [Trj] | 2.2.0 | 20180911 |
+| true | Win32:Trojan-gen | 3.0.0 | 20190510 |
 
 #### Avast
 | Infected      | Result      | Engine      | Updated      |
 |:-------------:|:-----------:|:-----------:|:------------:|
-| false |  | 2.2.0 | 20180911 |
+| false |  | 3.0.0 | 20190510 |
 

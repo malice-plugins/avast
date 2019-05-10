@@ -23,7 +23,7 @@ ResellerEmail=business-sales@avast.com
 #
 # Customer name (license holder)
 #
-CustomerName=Frank Tight
+CustomerName=Wayne Ding
 
 #
 # Customer number
@@ -33,12 +33,12 @@ CustomerNumber=999999
 #
 # Name of customer company
 #
-CustomerCompany=TightenUp
+CustomerCompany=WingDingsAreMyThing
 
 #
 # Number of licensed products (covered by this file)
 #
-CertificateCount=2
+CertificateCount=1
 
 #
 # Section for licensed product 1
@@ -51,9 +51,9 @@ CertificateCount=2
 Feature=AV_LNX
 
 #
-# License creation date: Feb 9, 2019
+# License creation date: May 10, 2019
 #
-Issued=1549735164
+Issued=1557518722
 
 #
 # License expiry date: <never expires>
@@ -61,9 +61,9 @@ Issued=1549735164
 ValidThru=0
 
 #
-# Update license expiry date: Mar 11, 2019
+# Update license expiry date: Jun 9, 2019
 #
-UpdateValidThru=1552327164
+UpdateValidThru=1560110722
 
 #
 # Number of licensed items
@@ -89,54 +89,5 @@ ResellerId=3750
 LicenseType=15
 
 
-#
-# Section for licensed product 2
-#
-[Certificate1]
-
-#
-# Name of product: avast! File Server Security for Linux
-#
-Feature=AV_FLNX
-
-#
-# License creation date: Feb 9, 2019
-#
-Issued=1549735164
-
-#
-# License expiry date: <never expires>
-#
-ValidThru=0
-
-#
-# Update license expiry date: Mar 11, 2019
-#
-UpdateValidThru=1552327164
-
-#
-# Number of licensed items
-#
-LicenseCount=1
-
-#
-# License Identifier
-#
-LicenseId=00000000-0000-0000-0000-000000000000
-
-#
-# Reseller Identifier
-#
-ResellerId=3750
-
-#
-# Product type
-#   4 = Demo
-#   8 = Special trial
-#   15 = Trial
-#
-LicenseType=15
-
-
-ASWSignA08AEB3A60C7B8E41E555B0EF30E744BB9A7961ABA810A69FEBBCD204CE43ED5D95E24C4EE38F604CASWSignA
-ASWSignA864E150EDBB51CD1FFBD528D7D04FCD8DF931C2482507BECF4EE4D589698CBD8B9458882A97CB006ASWSignA
+ASWSignA1BAD97172940ADD8D8AB5EB1440844672B2F671C39EF279945EB50F0CE540069548FD3C9E5183612ASWSignA
+ASWSignA2F14E768E139CF95A0F7E0CA269ABA65F3CE7C1309D0EE9809F366AFCD3AB6BD658BCC9E72117FC5ASWSignA

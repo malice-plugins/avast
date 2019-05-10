@@ -1,9 +1,9 @@
 {
   "avast": {
     "infected": true,
-    "result": "Win32:Lecna-I [Trj]",
-    "engine": "2.2.0",
-    "database": "18090504",
-    "updated": "20180911"
+    "result": "Win32:Trojan-gen",
+    "engine": "3.0.0",
+    "database": "19051006",
+    "updated": "20190510"
   }
 }

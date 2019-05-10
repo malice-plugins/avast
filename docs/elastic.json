@@ -1,5 +1,5 @@
 {
-  "took": 55,
+  "took": 134,
   "timed_out": false,
   "_shards": {
     "total": 1,
@@ -14,43 +14,43 @@
       {
         "_index": "malice",
         "_type": "samples",
-        "_id": "xT52xmUBclo10KkxfCDK",
+        "_id": "LQsgpGoBUAMv7WgQCuYK",
         "_score": 1,
         "_source": {
           "plugins": {
             "av": {
               "avast": {
-                "Database": "18090504",
-                "Engine": "2.2.0",
-                "Infected": true,
-                "Result": "Win32:Lecna-I [Trj]",
-                "Updated": "20180911",
-                "markdown": "#### Avast\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Win32:Lecna-I [Trj] | 2.2.0 | 20180911 |\n"
+                "database": "19051006",
+                "engine": "3.0.0",
+                "infected": true,
+                "markdown": "#### Avast\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| true | Win32:Trojan-gen | 3.0.0 | 20190510 |\n",
+                "result": "Win32:Trojan-gen",
+                "updated": "20190510"
               }
             }
           },
-          "scan_date": "2018-09-11T02:29:38.626110743Z"
+          "scan_date": "2019-05-10T23:42:04.273023Z"
         }
       },
       {
         "_index": "malice",
         "_type": "samples",
-        "_id": "xj52xmUBclo10KkxlyA_",
+        "_id": "LgsgpGoBUAMv7WgQKeZI",
         "_score": 1,
         "_source": {
           "plugins": {
             "av": {
               "avast": {
-                "Database": "18090504",
-                "Engine": "2.2.0",
-                "Infected": false,
-                "Result": "",
-                "Updated": "20180911",
-                "markdown": "#### Avast\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| false |  | 2.2.0 | 20180911 |\n"
+                "database": "19051006",
+                "engine": "3.0.0",
+                "infected": false,
+                "markdown": "#### Avast\n| Infected      | Result      | Engine      | Updated      |\n|:-------------:|:-----------:|:-----------:|:------------:|\n| false |  | 3.0.0 | 20190510 |\n",
+                "result": "",
+                "updated": "20190510"
               }
             }
           },
-          "scan_date": "2018-09-11T02:29:45.404911311Z"
+          "scan_date": "2019-05-10T23:42:12.2939311Z"
         }
       }
     ]

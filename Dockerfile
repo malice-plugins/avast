@@ -1,7 +1,7 @@
 ####################################################
 # GOLANG BUILDER
 ####################################################
-FROM golang:1.11 as go_builder
+FROM golang:1.12 as go_builder
 
 COPY . /go/src/github.com/malice-plugins/avast
 WORKDIR /go/src/github.com/malice-plugins/avast
