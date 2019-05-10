@@ -141,14 +141,14 @@ func ParseAvastOutput(avastout string, avErr error) ResultsData {
 
 // Get Anti-Virus scanner version
 func getAvastVersion() string {
-	versionOut, err := utils.RunCommand(nil, "/bin/scan", "-v")
+	versionOut, err := utils.RunCommand(nil, "scan", "-v")
 	assert(err)
 	log.Debug("Avast Version: ", versionOut)
 	return strings.TrimSpace(versionOut)
 }
 
 func getAvastVPS() string {
-	versionOut, err := utils.RunCommand(nil, "/bin/scan", "-V")
+	versionOut, err := utils.RunCommand(nil, "scan", "-V")
 	assert(err)
 	log.Debug("Avast Database: ", versionOut)
 	return strings.TrimSpace(versionOut)
